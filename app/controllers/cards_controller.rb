@@ -20,6 +20,9 @@ class CardsController < ApplicationController
 
   # GET /cards/1/edit
   def edit
+    if @card.user_id != current_user.id 
+      redirect_to home_page_path, notice: "You can't edit cards you didn't create!"
+    end
   end
 
   # POST /cards
