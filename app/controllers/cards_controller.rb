@@ -25,7 +25,7 @@ class CardsController < ApplicationController
   # POST /cards.json
   def create
     @card = Card.new(card_params)
-    # @card.user = current_user.name
+    @card.user_id = current_user.id
     # @card.save
 
     respond_to do |format|
@@ -71,6 +71,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:question, :answer, :endorsed, :user_id)
+      params.require(:card).permit(:question, :answer, :endorsed)
     end
 end
