@@ -5,14 +5,15 @@
   <%= @card.question %>
 </p>
 
-<%= image_tag @card.question_picture %>
+<% if @card.question_picture %>
+  <%= image_tag @card.question_picture, width: '100', height: '100' %>
+<% end %>
 
 <p>
   <strong>Answer:</strong>
   <%= @card.answer %>
 </p>
 
-<%= image_tag @card.answer_picture %>
 
 <p>
   <strong>Endorsed:</strong>
