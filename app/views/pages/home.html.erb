@@ -13,6 +13,10 @@
 <p> Showing all flash card questions </p>
 <% @cards.each do |card| %>
     <div class='card'>
-        <%= card.question %>
+        <div class='container'>
+            <p><%= card.question %></p>
+            <br>
+            <%= link_to 'see details', card_path(card.id) %>
+        </div>
     </div>
 <% end %>
