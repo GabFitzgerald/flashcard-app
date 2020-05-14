@@ -26,6 +26,8 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     @card.user_id = current_user.id
+    @card.question_picture.attach(params[:card][:question_picture])
+    @card.answer_picture.attach(params[:card][:answer_picture])
     # @card.save
 
     respond_to do |format|
