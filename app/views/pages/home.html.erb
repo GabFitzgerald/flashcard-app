@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-    Show flash cards
+    Show user's flash cards
 <% else %>    
     <h1>Welcome to flash card app</h1>
     <ul>
@@ -7,4 +7,12 @@
         <li><%= link_to('Sign Up', new_user_registration_path) %></li>
         <li>Login as teacher</li>
     </ul>
+    
+<% end %>
+
+<p> Showing all flash card questions </p>
+<% @cards.each do |card| %>
+    <div class='card'>
+        <%= card.question %>
+    </div>
 <% end %>

@@ -7,3 +7,16 @@ li {
     list-style: none;
     display: inline;
 }
+
+div.card {
+    border-style: solid;
+    border-width: 2px;
+    display: inline;
+    height: 500px;
+    width: 500px;
+    border-radius: 30%;
+    // change background-color based on difficulty
+    background-color: #77dd77;
+    
+
+}
