@@ -63,3 +63,17 @@ div.actions {
 
 label {
   display: block; }
+
+aside {
+  ul { 
+    padding: 0;
+    li {
+      display: block;
+    }
+  } 
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+}
