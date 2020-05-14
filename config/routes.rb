@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  get 'pages/home'
+  get 'pages/about'
+  get 'pages/how_to_use'
+  get 'pages/educators'
+  get 'pages/feedback'
   devise_for :users
   resources :users
   root to: "users#index"
