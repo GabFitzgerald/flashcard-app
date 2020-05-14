@@ -63,3 +63,25 @@ div.actions {
 
 label {
   display: block; }
+
+aside {
+  border-style: solid;
+  h2 {
+    text-align: center;
+  }
+  ul { 
+    padding: 0;
+    li {
+      display: block;
+    }
+  } 
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+}
+
+#content {
+  padding: 10px;
+}
