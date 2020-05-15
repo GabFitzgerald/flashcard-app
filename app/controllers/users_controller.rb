@@ -41,6 +41,9 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @user.profile_picture.attach(params[:user][:profile_picture])
+    @user.save
+    
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'Profile was successfully updated.' }

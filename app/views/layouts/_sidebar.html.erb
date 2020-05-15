@@ -1,5 +1,6 @@
 <aside id='user-details'>
     <% if user_signed_in? %>
+        <%= image_tag(current_user.profile_picture, height: '50', width: '50') if current_user.profile_picture.attached? %>
         <h2><%= current_user.name %></h2>
         <ul>
             <li><%= link_to('Edit profile', edit_user_path(current_user))%>

@@ -17,9 +17,20 @@
   </div>
 
   <div class="field">
+    <%= form.label :question_picture %>
+    <%= form.file_field :question_picture %>
+  </div>
+
+  <div class="field">
     <%= form.label :answer %>
     <%= form.text_area :answer %>
   </div>
+
+  <div class="field">
+    <%= form.label :answer_picture %>
+    <%= form.file_field :answer_picture %>
+  </div>
+  
 
   <%# add logic so that this is only visible to teachers
    or change so that if a teacher created the card, it is automatically endorsed%>
