@@ -20,9 +20,16 @@
         <%= image_tag(card.user.profile_picture, height: '32', width: '32') if card.user.profile_picture.attached? %>
         <%= link_to fa_icon("eye 2x"), card %>
         <%# only show edit and delete options to user if they created the card or if the user is an educator%>
-        <% if current_user.id == card.user_id || current_user.has_role?(:educator) %>
+        <% if current_user.id == card.user_id %>
           <%= link_to fa_icon("edit 2x"), edit_card_path(card) %>
           <%= link_to fa_icon("trash 2x"), card, method: :delete, data: { confirm: 'Are you sure?' } %>
+        
+        <% #eductors can endorse cards from the index page %>
+        <% elsif current_user.has_role?(:educator) && card.endorsed != true %>
+          teachers can endorse cards
+          endorse button to be added
+        <% else %>
+
         <% end %>
       </div>
     </div>
