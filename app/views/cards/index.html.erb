@@ -22,8 +22,8 @@
         <% end %>
         <%= image_tag(card.user.profile_picture, height: '32', width: '32') if card.user.profile_picture.attached? %>
         <%= link_to 'Show', card %>
-        <%# only show edit and delete options to user if they created the card (TODO: or if the user is an educator)%>
-        <% if current_user.id == card.user_id %>
+        <%# only show edit and delete options to user if they created the card or if the user is an educator%>
+        <% if current_user.id == card.user_id || current_user.has_role?(:educator) %>
           <%= link_to 'Edit', edit_card_path(card) %>
           <%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
