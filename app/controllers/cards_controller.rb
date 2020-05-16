@@ -48,6 +48,9 @@ class CardsController < ApplicationController
   # PATCH/PUT /cards/1
   # PATCH/PUT /cards/1.json
   def update
+    @card.question_picture.attach(params[:card][:question_picture])
+    @card.answer_picture.attach(params[:card][:answer_picture])
+
     respond_to do |format|
       if @card.update(card_params)
         format.html { redirect_to @card, notice: 'Card was successfully updated.' }

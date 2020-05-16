@@ -8,13 +8,19 @@
     <div class='card'>
       <div class='container'>
         <%= card.question %>
+        <% if card.question_picture.attached?%>
+          <%= fa_icon "image x" %>
+        <% end %>
         <hr>
         <%= card.answer %>
+        <% if card.answer_picture.attached?%>
+          <%= fa_icon "image x" %>
+        <% end %>
         <hr>
         <% if card.endorsed %>
-          <%= fa_icon "check-square 2x" %>
+          <%= fa_icon "check-square 3x" %>
         <% end %>
-        <%= image_tag(card.user.profile_picture, height: '30', width: '30') if card.user.profile_picture.attached? %>
+        <%= image_tag(card.user.profile_picture, height: '32', width: '32') if card.user.profile_picture.attached? %>
         <%= link_to 'Show', card %>
         <%# only show edit and delete options to user if they created the card (TODO: or if the user is an educator)%>
         <% if current_user.id == card.user_id %>
