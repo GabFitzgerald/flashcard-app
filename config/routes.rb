@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :cards
-  root to: "pages#home", as: 'home_page'
+  root to: "cards#index", as: 'home_page'
   get 'pages/about', to: 'pages#about', as: 'about_page'
   get 'pages/how_to_use', to: 'pages#how_to_use', as: 'how_to_use_page'
   get 'pages/educators', to: 'pages#educators', as: 'educators_page'
