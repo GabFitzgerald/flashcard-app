@@ -2,34 +2,29 @@
 
 <h1>Cards</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Question</th>
-      <th>Answer</th>
-      <th>Endorsed</th>
-      <th>Created by</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  
+  <section class='cards-list'>
     <% @cards.each do |card| %>
-      <tr>
-        <td><%= card.question %></td>
-        <td><%= card.answer %></td>
-        <td><%= card.endorsed %></td>
-        <td><%= card.user.name %></td>
-        <td><%= link_to 'Show', card %></td>
+    <div class='card'>
+      <div class='container'>
+        <%= card.question %>
+        <hr>
+        <%= card.answer %>
+        <hr>
+        <% if card.endorsed %>
+          <%= fa_icon "check-square 2x" %>
+        <% end %>
+        <%= image_tag(card.user.profile_picture, height: '30', width: '30') if card.user.profile_picture.attached? %>
+        <%= link_to 'Show', card %>
         <%# only show edit and delete options to user if they created the card (TODO: or if the user is an educator)%>
         <% if current_user.id == card.user_id %>
-          <td><%= link_to 'Edit', edit_card_path(card) %></td>
-          <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%= link_to 'Edit', edit_card_path(card) %>
+          <%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
-      </tr>
+      </div>
+    </div>
     <% end %>
-  </tbody>
-</table>
+  </section>
 
 <br>
 
