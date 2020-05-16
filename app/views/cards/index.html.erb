@@ -4,6 +4,9 @@
     <% @cards.each do |card| %>
     <div class='card'>
       <div class='container'>
+        <div class='endorsement-tick'>
+            <%= fa_icon "check-square" if card.endorsed%>
+        </div>
         <%= card.question %>
         <% if card.question_picture.attached?%>
           <%= fa_icon "image x" %>
@@ -14,9 +17,6 @@
           <%= fa_icon "image x" %>
         <% end %>
         <hr>
-        <% if card.endorsed %>
-          <%= fa_icon "check-square 3x" %>
-        <% end %>
         <%= image_tag(card.user.profile_picture, height: '32', width: '32') if card.user.profile_picture.attached? %>
         <%= link_to fa_icon("eye 2x"), card %>
         <%# only show edit and delete options to user if they created the card or if the user is an educator%>

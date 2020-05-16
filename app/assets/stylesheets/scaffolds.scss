@@ -139,3 +139,11 @@ section.cards-list {
     flex-grow: 90;
   }
 }
+
+div.endorsement-tick {
+  float: right;
+  padding: 0px 0px 5px 20px;
+  i {
+    color: green;
+  }
+}
