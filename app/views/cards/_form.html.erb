@@ -10,38 +10,38 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :question %>
-    <%= form.text_area :question %>
-  </div>
-
-  <div class="field">
-    <%= form.label :question_picture %>
-    <%= form.file_field :question_picture %>
-  </div>
-
-  <div class="field">
-    <%= form.label :answer %>
-    <%= form.text_area :answer %>
-  </div>
-
-  <div class="field">
-    <%= form.label :answer_picture %>
-    <%= form.file_field :answer_picture %>
-  </div>
   
+  <div class='new-card'>
 
-  <%# add logic so that this is only visible to teachers
-   or change so that if a teacher created the card, it is automatically endorsed%>
-  <% if current_user.has_role?(:educator)%>
     <div class="field">
-      <%= form.label :endorsed %>
-      <%= form.check_box :endorsed, { checked: true }%>
+      <%= form.label :question %>
+      <%= form.text_area :question %>
+    </div>
+
+    <div class="field">
+      <%= form.file_field :question_picture %>
+    </div>
+    <hr>
+    <div class="field">
+      <%= form.label :answer %>
+      <%= form.text_area :answer %>
+    </div>
+
+    <div class="field">
+      <%= form.file_field :answer_picture %>
+    </div>
+    
+    <%# only visible to educators, checkbox checked by default to save time %>
+    <% if current_user.has_role?(:educator)%>
+      <div class="field">
+        <%= form.label :endorsed %>
+        <%= form.check_box :endorsed, { checked: true }%>
+      </div>
+    <% end %>
+
+</div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
