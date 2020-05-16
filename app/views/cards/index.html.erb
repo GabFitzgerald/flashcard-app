@@ -2,7 +2,6 @@
 
 <h1>Cards</h1>
 
-
   
   <section class='cards-list'>
     <% @cards.each do |card| %>
@@ -11,11 +10,11 @@
         <%= card.question %>
         <hr>
         <%= card.answer %>
-        <br>
-        <%= card.endorsed %>
-        <br>
-        <%= card.user.name %>
-        <br>
+        <hr>
+        <% if card.endorsed %>
+          <%= fa_icon "check-square 2x" %>
+        <% end %>
+        <%= image_tag(card.user.profile_picture, height: '30', width: '30') if card.user.profile_picture.attached? %>
         <%= link_to 'Show', card %>
         <%# only show edit and delete options to user if they created the card (TODO: or if the user is an educator)%>
         <% if current_user.id == card.user_id %>

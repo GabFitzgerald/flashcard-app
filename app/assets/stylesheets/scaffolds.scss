@@ -92,7 +92,7 @@ section.cards-list {
   align-content: space-between;
   padding: 5px;
   .card {
-    height: 100px;
+    min-height: 100px;
     max-width: 50%;
     min-width: 200px;
     display: flex;
@@ -108,6 +108,12 @@ section.cards-list {
         text-align: center;
         padding: 2px 16px;
         display: inline; 
+      }
+      i {
+        color: green;
+      }
+      img {
+        border-radius: 20%;
       }
     }
   }
