@@ -85,3 +85,30 @@ aside {
 #content {
   padding: 10px;
 }
+
+section.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding: 5px;
+  .card {
+    height: 100px;
+    max-width: 50%;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px #888888;
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+    .container {
+      justify-content: center;
+      a {
+        text-align: center;
+        padding: 2px 16px;
+        display: inline; 
+      }
+    }
+  }
+}

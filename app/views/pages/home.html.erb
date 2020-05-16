@@ -11,12 +11,15 @@
 <% end %>
 
 <p> Showing all flash card questions </p>
+<section class='cards-list'>
 <% @cards.each do |card| %>
     <div class='card'>
         <div class='container'>
             <p><%= card.question %></p>
             <br>
             <%= link_to 'see details', card_path(card.id) %>
+            <br>
         </div>
     </div>
 <% end %>
+</section>

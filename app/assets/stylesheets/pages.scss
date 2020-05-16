@@ -8,20 +8,3 @@ li {
     display: inline;
 }
 
-div.card {
-    border-style: solid;
-    border-width: 2px;
-    display: inline;
-    
-    border-radius: 30%;
-    // change background-color based on difficulty
-    background-color: #77dd77;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    .container {
-        padding: 2px 16px;
-        display: inline;      
-        p {
-            display: inline;
-        }
-    }
-}
