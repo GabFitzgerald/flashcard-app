@@ -4,7 +4,9 @@
 <li><%= link_to('How to use app', how_to_use_page_path)%></li>
 
 <% # add some logic that only shows this if a the users has an educator role%>
-<li><%= link_to('For Educators', educators_page_path)%></li>
+<% if current_user %>
+    <li><%= link_to('For Educators', educators_page_path)%></li>
+<% end %>
 
 <li><%= link_to('Feedback', feedback_page_path)%></li>
 
