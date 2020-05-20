@@ -1,13 +1,13 @@
 <% @cards.each do |card| %>
     <section class='cards-list'>
         <div class='card'>
-            <div class='container'>
+            <div class='study-mode'>
                 <%= card.question %>
                 <br>
                 <%= image_tag(card.question_picture, height: '100') if card.question_picture.attached? %>
                 <br>
-                <a class='reveal-answer'>Reveal Answer</a>
-                
+
+                <a class='reveal-answer'>Hover to reveal answer</a>
                 <div class='answer'>
                     <%= card.answer %>
                     <br>
