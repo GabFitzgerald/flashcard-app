@@ -5,7 +5,6 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
-    @educators_courses = Course.where(user_id: current_user.id)
   end
 
   # GET /courses/1
@@ -20,6 +19,12 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
+  end
+
+  # enroll a user into a course
+  def enrol
+    course = Course.find(params[:id])
+    current_user.courses << course
   end
 
   # POST /courses

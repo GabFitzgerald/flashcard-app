@@ -6,4 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # has_many :cards
   has_one_attached :profile_picture
+  has_many :enrollments
+  has_many :courses, through: :enrollments
 end
