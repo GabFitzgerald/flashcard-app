@@ -147,3 +147,11 @@ div.endorsement-tick {
     color: green;
   }
 }
+
+div.answer {
+  display: none;
+}
+
+a.reveal-answer:hover + div.answer {
+  display: block;
+}

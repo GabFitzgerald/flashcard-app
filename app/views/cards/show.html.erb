@@ -3,7 +3,7 @@
   <%= @card.question %>
 </p>
 
-<%= image_tag(@card.question_picture, width: '100', height: '100') if @card.question_picture.attached? %>
+<%= image_tag(@card.question_picture) if @card.question_picture.attached? %>
 
 <p>
   <strong>Answer:</strong>

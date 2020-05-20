@@ -1,3 +1,19 @@
 <% @cards.each do |card| %>
-    <%= card.question %>
+    <section class='cards-list'>
+        <div class='card'>
+            <div class='container'>
+                <%= card.question %>
+                <br>
+                <%= image_tag(card.question_picture, height: '100') if card.question_picture.attached? %>
+                <br>
+                <a class='reveal-answer'>Reveal Answer</a>
+                
+                <div class='answer'>
+                    <%= card.answer %>
+                    <br>
+                    <%= image_tag(card.answer_picture, height: '100') if card.answer_picture.attached? %>
+                </div>
+            </div>
+        </div>
+    </section>
 <% end %>
