@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def educators
+    
   end
 
   def feedback

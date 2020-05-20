@@ -21,6 +21,12 @@
     <%= form.file_field :profile_picture %>
   </div>
 
+  <div class="field">
+  <%= form.label :role %>
+    <%= form.radio_button :role, 'student', :checked => true %> Student
+    <%= form.radio_button :role, 'educator' %> Educator
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

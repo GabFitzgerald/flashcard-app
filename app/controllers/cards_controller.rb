@@ -20,9 +20,9 @@ class CardsController < ApplicationController
 
   # GET /cards/1/edit
   def edit
-    if @card.user_id != current_user.id && current_user.has_role?(:educator)
-      redirect_to home_page_path, notice: "You can't edit cards you didn't create!"
-    end
+    # if current_user.has_role?(:educator) && (@card.user_id != current_user.id)
+    #   redirect_to home_page_path, notice: "You can't edit cards you didn't create!"
+    # end
   end
 
   # POST /cards
@@ -70,6 +70,10 @@ class CardsController < ApplicationController
       format.html { redirect_to cards_url, notice: 'Card was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def study
+    @cards = Card.first(20)
   end
 
   private

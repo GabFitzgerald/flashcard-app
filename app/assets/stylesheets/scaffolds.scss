@@ -101,6 +101,7 @@ section.cards-list {
     display: inline;
     padding: 5px;
     margin: 5px;
+
     .container {
       justify-content: center;
       a {
@@ -108,11 +109,24 @@ section.cards-list {
         padding: 2px 16px;
         display: inline; 
       }
-      i {
-        // color: green;
-      }
       img {
         border-radius: 20%;
+      }
+    }
+    .study-mode {
+      font-size: large;
+      padding: 20px;
+      div.answer {
+        display: none;
+      }
+      a {
+        color: grey;
+      }
+      a.reveal-answer:hover + div.answer {
+        display: block;
+      }
+      img {
+        padding: 10px;
       }
     }
   }
@@ -147,3 +161,6 @@ div.endorsement-tick {
     color: green;
   }
 }
+
+
+

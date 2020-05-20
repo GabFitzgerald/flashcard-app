@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # after_create :assign_default_role
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -42,6 +43,10 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     @user.profile_picture.attach(params[:user][:profile_picture])
+    @user.add_role(params[:user][:role])
+    if params[:user][:role] == 'student'
+      @user.remove_role(:educator)
+    end
     @user.save
     
     respond_to do |format|
@@ -74,5 +79,10 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:name)
+    end
+
+    #assign users the default role of student
+    def assign_default_role
+      self.add_role(:student) if self.roles.blank?
     end
 end
