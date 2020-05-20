@@ -2,6 +2,21 @@
     <% if user_signed_in? %>
         <%= image_tag(current_user.profile_picture, height: '50', width: '50') if current_user.profile_picture.attached? %>
         <h2><%= current_user.name %></h2>
+        <% if @courses %>
+            <% if current_user.has_role?(:educator) %>
+                <% # list owned classes%>
+                <% @educators_courses.each do |course| %>
+                    <% course.name %>
+                <% end %>
+                <% @courses.each do |course| %>
+                    <%= course.name %>
+                    <%= link_to('View', course_path(course))%>
+                    <br>
+                <% end %>
+            <% else %>
+                <% # list enrolled courses with buttons to remove enrollment %>
+            <% end %>
+        <% end %>
         <ul>
             <li><%= link_to('Edit profile', edit_user_path(current_user))%>
             <li><%= link_to('Logout', destroy_user_session_path) %></li>
