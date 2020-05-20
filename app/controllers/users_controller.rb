@@ -44,6 +44,9 @@ class UsersController < ApplicationController
   def update
     @user.profile_picture.attach(params[:user][:profile_picture])
     @user.add_role(params[:user][:role])
+    if params[:user][:role] == 'student'
+      @user.remove_role(:educator)
+    end
     @user.save
     
     respond_to do |format|
