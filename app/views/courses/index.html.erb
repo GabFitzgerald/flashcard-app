@@ -6,9 +6,14 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.name %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.has_role?(:educator) %>
+          <td><%= link_to 'Details', course %></td>
+          <td><%= link_to 'Edit name', edit_course_path(course) %></td>
+          <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <% # enrol button %>
+          <% # view%>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
