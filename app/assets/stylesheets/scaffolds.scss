@@ -16,12 +16,11 @@ pre {
 a {
   color: #000; }
 
-a:visited {
-  color: #666; }
 
 a:hover {
-  color: #fff;
-  background-color: #000; }
+  color: grey;
+  // background-color: #000; 
+}
 
 th {
   padding-bottom: 5px; }
@@ -63,3 +62,88 @@ div.actions {
 
 label {
   display: block; }
+
+aside {
+  border-style: solid;
+  h2 {
+    text-align: center;
+  }
+  ul { 
+    padding: 0;
+    li {
+      display: block;
+    }
+  } 
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+}
+
+#content {
+  padding: 10px;
+}
+
+section.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding: 5px;
+  .card {
+    min-height: 100px;
+    max-width: 50%;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px #888888;
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+    .container {
+      justify-content: center;
+      a {
+        text-align: center;
+        padding: 2px 16px;
+        display: inline; 
+      }
+      i {
+        // color: green;
+      }
+      img {
+        border-radius: 20%;
+      }
+    }
+  }
+}
+
+.new-card {
+  min-height: 100px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 15px #888888;
+  padding: 5px;
+  margin: 5px;
+  width: 80%;
+  textarea {
+    padding: 2px;
+    width: 95%;
+    min-height: 40px;
+  }
+}
+
+#main {
+  display: flex;
+  section {
+    flex-grow: 90;
+  }
+}
+
+div.endorsement-tick {
+  float: right;
+  padding: 0px 0px 5px 20px;
+  i {
+    color: green;
+  }
+}
