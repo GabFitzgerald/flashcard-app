@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :courses
   resources :cards
   root to: "cards#index", as: 'home_page'
   get 'pages/about', to: 'pages#about', as: 'about_page'
