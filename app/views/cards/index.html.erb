@@ -24,10 +24,11 @@
           <%= link_to fa_icon("edit 2x"), edit_card_path(card) %>
           <%= link_to fa_icon("trash 2x"), card, method: :delete, data: { confirm: 'Are you sure?' } %>
         
-        <% #eductors can endorse cards from the index page %>
+        <% #eductors can endorse cards %>
         <% elsif current_user.has_role?(:educator) && card.endorsed != true %>
-          teachers can endorse cards
-          endorse button to be added
+          <%= link_to fa_icon("edit 2x"), edit_card_path(card) %>
+        
+        <% #users who did not create the card and do not have educator permissions cannot delete or edit cards%>
         <% else %>
 
         <% end %>
@@ -39,3 +40,5 @@
 <br>
 
 <%= link_to 'New Card', new_card_path %>
+<br>
+<%= link_to 'Study Now', study_page_path %>
