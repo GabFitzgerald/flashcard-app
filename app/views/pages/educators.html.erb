@@ -2,8 +2,7 @@
     <% if current_user.has_role?(:educator) %>
     <% # page that is rendered if the user is an educator%>
     <h2>Hello, you are an educator</h2>
-    <p>This page will only be acceible to educators and will provide analytics to teachers.
-    From here they can see the activity of the students, the most difficult cards, and endorse cards. </p>
+    <p>You have permissions to endorse cards, and edit student created cards. </p>
     <% else %>
     <%# page that is rendered if the user is not an educator%>
     <h2>Become an educator<h2>
