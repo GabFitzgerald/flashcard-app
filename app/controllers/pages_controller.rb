@@ -9,10 +9,6 @@ class PagesController < ApplicationController
   def how_to_use
   end
 
-  def educators
-    
-  end
-
-  def feedback
+  def educators 
   end
 end
