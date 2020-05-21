@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'pages/educators', to: 'pages#educators', as: 'educators_page'
   get 'pages/feedback', to: 'pages#feedback', as: 'feedback_page'
   devise_for :users
-  resources :users
+  resources :users, :except => [:index]
   get 'cards/study', to: 'cards#study', as: 'study_page'
   resources :cards
   
